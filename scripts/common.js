@@ -4,11 +4,11 @@
  */
 
 function searchTitle() {
-    var keyword = document.getElementById('searchBox').value;
+    var keyword = document.getElementById('searchBox').value.toLowerCase();
     var list = document.getElementById("result");
     list.innerHTML="";
     for(var i = 0; i<data.length; i++) {
-        if(data[i].title.search(keyword) != -1) {
+        if(data[i].title.toLowerCase().search(keyword) != -1) {
             var textnode = document.createTextNode(data[i].title);
             var node = document.createElement("LI");
             node.appendChild(textnode);
